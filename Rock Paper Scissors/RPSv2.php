@@ -3,12 +3,13 @@
 //Every outcome in an array. Player selection is a key.
 //The values are another array with the possible outcomes against computer selection.
 $outcomes = [
-    'rock' => ['scissors' => 'win', 'paper' => 'lose', 'rock' => 'tie'],
-    'paper' => ['rock' => 'win', 'scissors' => 'lose', 'paper' => 'tie'],
-    'scissors' => ['paper' => 'win', 'rock' => 'lose', 'scissors' => 'tie'],
-    'lizard' => ['paper' => 'win', 'rock' => 'win', 'scissors' => 'win'],
-    'spock' => ['paper' => 'win', 'rock' => 'win', 'scissors' => 'win']
+    'rock' => ['scissors' => 'win', 'paper' => 'lose', 'rock' => 'tie', 'lizard' => 'win', 'spock' => 'lose'],
+    'paper' => ['rock' => 'win', 'scissors' => 'lose', 'paper' => 'tie', 'lizard' => 'lose', 'spock' => 'win'],
+    'scissors' => ['paper' => 'win', 'rock' => 'lose', 'scissors' => 'tie', 'lizard' => 'win', 'spock' => 'lose'],
+    'lizard' => ['paper' => 'win', 'rock' => 'lose', 'scissors' => 'lose', 'lizard' => 'tie', 'spock' => 'win'],
+    'spock' => ['paper' => 'lose', 'rock' => 'win', 'scissors' => 'win', 'lizard' => 'lost', 'spock' => 'tie']
 ];
+
 
 $playAgain = 'Y';
 
