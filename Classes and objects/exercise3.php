@@ -20,13 +20,15 @@ class FuelGauge {
             }
         }
     }
-
-    public function usingTheFuel() {
-        $this->amount = $this->amount - 1;
-        if ($this->amount <= 0) {
-            echo "The tank is empty. Tank has $this->amount litres in it" . PHP_EOL;
-            break;
+    public function usingTheFuel($kilometres) {
+        for ($i = 0; $i < $kilometres / 10; $i++) {
+            $this->amount = $this->amount - 1;
+            if ($this->amount <= 0) {
+                echo "The tank is empty. Tank has $this->amount litres in it" . PHP_EOL;
+                return true; // tank is empty
+            }
         }
+        return false; // tank is not empty
     }
 }
 
@@ -56,15 +58,17 @@ class Odometer {
             $this->odometerGoingUp();
         }
         for ($j = 0; $j < $kilometres / 10; $j++) {
-            $this->fuelGauge->usingTheFuel();
+            if ($this->fuelGauge->usingTheFuel(10)) {
+                break;
+            }
         }
     }
 }
 
 $tank = new FuelGauge(50);
 $carsOdometer = new Odometer(1000, $tank);
-$tank->fillItUp(35);
+$tank->fillItUp(10);
 $tank->printFuelAmount();
-$carsOdometer->driving(1500, $tank);
-$tank->printFuelAmount();
+$carsOdometer->driving(500, $tank);
 $carsOdometer->printMileageAmount();
+$tank->printFuelAmount();
