@@ -14,7 +14,7 @@ class Account {
     }
 
     public function showAccount () {
-        echo "The $this->name has $$this->balance in balance" . PHP_EOL;
+        return "The $this->name has $$this->balance in balance" . PHP_EOL;
     }
 
     public function withdraw (int $amount) {
