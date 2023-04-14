@@ -5,7 +5,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $city = readline("Hello and welcome to the simplest weather report! Enter city: ");
-$apiKey = "3b93430fef65e8eddf6d676047d68e7f";
+$apiKey = "";
 $url = "http://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city) . "&appid=" . $apiKey . "&units=metric";
 
 $client = new Client();
